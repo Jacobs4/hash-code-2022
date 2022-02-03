@@ -1,0 +1,71 @@
+{"naive_cost_function": [
+  {
+    "pizza": ["a", "b"],
+    "customers": [
+      {
+        "id": 0,
+        "likes": ["b"],
+        "dislikes": ["a"]
+      },
+      {
+        "id": 1,
+        "likes": ["a"],
+        "dislikes": ["b"]
+      }
+    ],
+    "score": 0
+  },
+  {
+    "pizza": [],
+    "customers": [
+      {
+        "id": 0,
+        "likes": ["b"],
+        "dislikes": ["a"]
+      },
+      {
+        "id": 1,
+        "likes": ["a"],
+        "dislikes": ["b"]
+      }
+    ],
+    "score": 0
+  },
+    {
+    "pizza": ["a", "b", "c"],
+    "customers": [
+      {
+        "id": 0,
+        "likes": ["a", "c"],
+        "dislikes": []
+      },
+      {
+        "id": 1,
+        "likes": ["a"],
+        "dislikes": ["b"]
+      }
+    ],
+    "score": 1
+  },
+  {
+    "pizza": ["cheese", "mushrooms", "tomatoes", "peppers"],
+    "customers": [
+      {
+        "id": 0,
+        "likes": ["cheese", "peppers"],
+        "dislikes": []
+      },
+      {
+        "id": 1,
+        "likes": ["basil"],
+        "dislikes": ["pineapple"]
+      },
+      {
+        "id": 2,
+        "likes": ["mushrooms", "tomatoes"],
+        "dislikes": ["basil"]
+      }
+    ],
+    "score": 2
+  }
+]}
