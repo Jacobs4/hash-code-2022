@@ -1,5 +1,5 @@
 from typing import List
-from .. import Customer
+from custom_parser import Customer
 
 
 def naive_cost_function(pizza_ingredients: List[str], customers: List[Customer]) -> int:
