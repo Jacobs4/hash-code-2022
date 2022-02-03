@@ -11,12 +11,14 @@ class Customer:
 
 def parse_dataset(dataset_path: str) -> List[Customer]:
     """Parses a dataset into a list of handy Customer objects.
+
     Args:
         dataset_path: relative path to the dataset file.
+
     Returns:
         List of Customer objects.
-    """
 
+    """
     with open(dataset_path, "r") as f:
         customers: List[Customer] = list()
         # skips the first line since we don't really need to know how many customers there are
