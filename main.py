@@ -1,8 +1,8 @@
 from os import listdir
 from os.path import isfile, join
 
-from code import parse_dataset, Customer, naive_cost_function
-
+from custom_parser import parse_dataset, Customer
+from cost_function import naive_cost_function
 
 if __name__ == '__main__':
     DATASETS_PATH = "input-data/"
