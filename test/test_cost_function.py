@@ -5,7 +5,7 @@ from cost_function import naive_cost_function
 from custom_parser import Customer
 
 
-with open("tests/tests_data.json", "r") as f:
+with open("test/tests_data.json", "r") as f:
     data = json.load(f)
     test_naive_cost_function_data = []
     for test_case in data["naive_cost_function"]:
