@@ -48,6 +48,8 @@ def remove_disliked_ingredient(pizza_ingredients: List[str], customers: List[Cus
     """Removes an ingredient a random customer dislikes from the pizza."""
     pizza_ingredients = copy.copy(pizza_ingredients)
     customers_that_dislike_stuff = [customer for customer in customers if customer.dislikes]
+    if not customers_that_dislike_stuff:
+        return pizza_ingredients
     random_customer = random.choice(customers_that_dislike_stuff)
     for disliked_ingredient in random_customer.dislikes:
         if disliked_ingredient in pizza_ingredients:
@@ -60,8 +62,10 @@ def add_liked_ingredient(pizza_ingredients: List[str], customers: List[Customer]
     """Adds an ingredient a random customer likes to the pizza."""
     pizza_ingredients = copy.copy(pizza_ingredients)
     customers_that_like_stuff = [customer for customer in customers if customer.likes]
+    if not customers_that_like_stuff:
+        return pizza_ingredients
     random_customer = random.choice(customers_that_like_stuff)
-    for liked_ingredient in random_customer.dislikes:
+    for liked_ingredient in random_customer.likes:
         if liked_ingredient not in pizza_ingredients:
             pizza_ingredients.append(liked_ingredient)
             break
@@ -121,7 +125,7 @@ def simulated_annealing(customers: List[Customer], t_start: float, t_stop: float
 
 if __name__ == '__main__':
     customers = parse_dataset("input-data/c_coarse.in.txt")
-    solution = simulated_annealing(customers, t_start=100, t_stop=1, t_iter=100, alpha=0.999,
+    solution = simulated_annealing(customers, t_start=100, t_stop=1, t_iter=20, alpha=0.99,
                                    change_temperature=exponential_cooling_schedule)
     print(solution.score)
     print(solution.submission_format())
