@@ -16,10 +16,20 @@ def naive_cost_function(pizza_ingredients: List[str], customers: List[Customer])
         The number of customers that would order the pizza.
 
     """
+
+    # FIXME: this implementation still bottlenecks the SA algorithm(it spends here over ~90% of the time)
+
+    def check_customer(customer: Customer):
+        """Returns 0 if one of the requirements isn't satisfied, otherwise returns 1."""
+        for disliked_ingredient in customer.dislikes:
+            if disliked_ingredient in pizza_ingredients:
+                return 0
+        for liked_ingredient in customer.likes:
+            if liked_ingredient not in pizza_ingredients:
+                return 0
+        return 1
+
     score = 0
     for customer in customers:
-        if all([liked_ingredient in pizza_ingredients for liked_ingredient in customer.likes]) and \
-                not any([disliked_ingredient in pizza_ingredients for disliked_ingredient in customer.dislikes]):
-            score += 1
+        score += check_customer(customer)
     return score
-

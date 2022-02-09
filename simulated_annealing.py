@@ -82,8 +82,8 @@ def exponential_cooling_schedule(t_start: float, alpha: float, iteration: int) -
     return t_start * alpha ** iteration
 
 
-def simulated_annealing(customers: List[Customer], t_start: float, t_stop: float, t_iter: int, alpha: float,
-                        change_temperature: cooling_schedule) -> Solution:
+def simulated_annealing(customers: List[Customer], t_start: float, t_stop: float, t_iter: int,
+                        alpha: float, change_temperature: cooling_schedule) -> Solution:
     """Simulated annealing optimization algorithm.
 
     Args:
